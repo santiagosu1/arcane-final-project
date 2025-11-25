@@ -3,8 +3,8 @@
 @font-face {
     font-family: "Mark W05 Medium";
     src: url("https://db.onlinewebfonts.com/t/b621d1ffb46493164fd62fb7a83ab0ff.woff2") format("woff2"),
-         url("https://db.onlinewebfonts.com/t/b621d1ffb46493164fd62fb7a83ab0ff.woff") format("woff"),
-         url("https://db.onlinewebfonts.com/t/b621d1ffb46493164fd62fb7a83ab0ff.ttf") format("truetype");
+        url("https://db.onlinewebfonts.com/t/b621d1ffb46493164fd62fb7a83ab0ff.woff") format("woff"),
+        url("https://db.onlinewebfonts.com/t/b621d1ffb46493164fd62fb7a83ab0ff.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -17,17 +17,24 @@
 
 header { 
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-columns: 160px 5fr 1fr;
     align-items: center;
     padding-left: 40px;
-    padding-right: 40px;    
+    padding-right: 25px;    
     background-color: black;
     min-height: 80px;
 }
 
+
 .logos-style {
     display: flex;
+    align-items: center;
     gap: 30px;
+    min-height: 80px;
+}
+
+.logos-style img {
+    height: 32px;
 }
 
 nav {
@@ -49,15 +56,30 @@ nav ul li a {
     letter-spacing: 1px;
     font-weight: 900;
 }
+@media (min-width: 1024px ) {
+    nav  {   
+        margin-left: 30px;
+    }
+}
 .sign-in-style {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     min-height: 80px;
     gap: 15px;
-    padding-left: 80px;
 }
-.btn-header {
+
+.btn-language {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-language img {
+    height: 20px;
+    width: auto;
+}
+.btn-sign-up {
     width: 90px;
     height: 30px;
     background-color: #292929;
@@ -71,7 +93,53 @@ nav ul li a {
     cursor: pointer;    
 }
 
-.btn-header a {
+.btn-sign-up a {
     text-decoration: none;
     color: white;
 }
+
+.mobile-menu-btn {
+    display: none;
+    background-color: #292929;
+    color: white;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    height: 48px;
+    width: 48px;
+}
+
+@media (max-width: 1024px ) {
+    header {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    nav {
+        margin-left: 18px;
+    }
+    ul li a {
+        display: none;
+        background-color: transparent;
+    }
+    .logos-style img {
+        height: 37px;
+    }
+
+    .btn-header {
+        display: none;
+    }
+    .btn-language img {
+    height: 30px;
+    width: auto;
+    }
+    .btn-sign-up {
+        display: none;
+    }
+    .mobile-menu-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+    }  
+}  
