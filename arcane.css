@@ -56,11 +56,6 @@ nav ul li a {
     letter-spacing: 1px;
     font-weight: 900;
 }
-@media (min-width: 1024px ) {
-    nav  {   
-        margin-left: 30px;
-    }
-}
 .sign-in-style {
     display: flex;
     justify-content: flex-end;
@@ -108,6 +103,12 @@ nav ul li a {
     text-align: center;
     height: 48px;
     width: 48px;
+}
+/* MEDIA QUERYS */
+@media (min-width: 1024px ) {
+    nav  {   
+        margin-left: 30px;
+    }
 }
 
 @media (max-width: 1024px ) {
