@@ -19,7 +19,7 @@
     margin: 0;
     padding: 0;
 }
-
+/* NAVEGATION */
 header {
     display: grid;
     grid-template-columns: 160px 5fr 1fr;
@@ -124,6 +124,46 @@ li {
     height: 48px;
     width: 48px;
 }
+@media (min-width: 1024px ) {
+    nav  {   
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 1024px ) {
+    header {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    nav {
+        margin-left: 18px;
+    }
+    ul li a {
+        display: none;
+        background-color: transparent;
+    }
+    .logos-style img {
+        height: 37px;
+    }
+
+    .btn-header {
+        display: none;
+    }
+    .btn-language img {
+    height: 30px;
+    width: auto;
+    }
+    .btn-sign-up {
+        display: none;
+    }
+    .mobile-menu-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+    }  
+}  
+/* SECTION 1 */
 .arcane-netflix-container {
     position: relative;
     width: 100%;
@@ -153,9 +193,12 @@ li {
     justify-content: space-between;
     align-items: flex-start;
 }
-
+.arcane-title-watch-container img {
+    max-width: 450px;
+    max-height: 182px;
+}
 h1 {
-    min-width: 260px;
+    width: 260px;
     text-align: center;
     background-color: black;
     color: white;
@@ -271,7 +314,6 @@ h1 {
 
 .section-1-gallery-container img {
     max-width: 330px;
-    max-height: 185px;
 }
 .section-1-image-container {
     display: flex;
@@ -289,7 +331,7 @@ h1 {
     transform: scale(1.15);
 }
 .arcane-youtube-btn-container {
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.4s ease-out;
 }
 .section-1-gallery-text {
     display: flex;
@@ -325,42 +367,92 @@ h1 {
 }
 /* ANIMATIONS */
 /* MEDIA QUERYS */
-@media (min-width: 1024px ) {
-    nav  {   
-        margin-left: 30px;
-    }
-}
-
 @media (max-width: 1024px ) {
-    header {
-        padding-left: 12px;
-        padding-right: 12px;
+    .arcane-netflix-container {
+        min-height: 730px;
     }
-    nav {
-        margin-left: 18px;
+    .arcane-netflix-content-container {
+        grid-template-rows: 250px minmax(auto, 120px) minmax(auto,30px) 1fr;
     }
-    ul li a {
-        display: none;
-        background-color: transparent;
+    .only-netflix-container {
+        justify-items: start;
+        padding-left: 45px;
+        padding-right: 0px;
     }
-    .logos-style img {
-        height: 37px;
+    .arcane-title-style img {
+        max-width: 400px;
+    }
+    h1 {
+    width: 240px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: "Manuka", sans-serif;
+    }
+    .section-1-image-container:hover {
+        transform: scale(1);
+        z-index: 5;
+        transition: transform 0.36s ease;
+    }
+    .watch-btn-style {
+        max-height: 71px;
+        max-width: 115px;
+        font-size: 40px;
     }
 
-    .btn-header {
-        display: none;
-    }
-    .btn-language img {
-    height: 30px;
-    width: auto;
-    }
-    .btn-sign-up {
-        display: none;
-    }
-    .mobile-menu-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 25px;
-    }  
-}  
+}
+/* SECTION 2 */
+.arcane-sinopsis-container {
+    min-width: 100%;
+    min-height: 640px;
+    position: relative;
+}
+.arcane-sinopsis-content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 100px 0px;
+}
+.arcane-bg-image-style {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.arcane-wallpaper-section-2-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.arcane-wallpaper-section-2-container img{
+    max-width: 688px;
+    max-height: 386px;
+}
+.arcane-section-2-sinopsis {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.arcane-section-2-sinopsis p {
+font-family: "Inter", sans-serif;
+max-width: 650px;
+font-size: 18px;
+}
+.arcane-section-2-h2-style {
+    display: flex;
+    place-items: start;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-family: "Manuka", sans-serif;
+}
