@@ -44,6 +44,8 @@ header {
 nav {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    min-height: 100%;
 }
 
 nav ul {
@@ -59,6 +61,20 @@ nav ul li a {
     font-size: 13.2px;
     letter-spacing: 1px;
     font-weight: 900;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 80px;
+}
+.spacer-decoration {
+    border: 3px solid rgb(91, 91, 91);
+    border-radius: 1px;
+    width: 50px;
+    margin: 0 auto;
+    display: block;
 }
 .sign-in-style {
     display: flex;
@@ -112,7 +128,7 @@ nav ul li a {
     position: relative;
     width: 100%;
     height: 100%;
-    padding: 25px 45px;
+    padding: 25px 0px;
 }
 .bg-arcane-video {
     position: absolute;
@@ -154,6 +170,7 @@ h1 {
     flex-direction: column;
     place-items: center;
     gap: 10px;
+    margin-left: 45px;
 }
 .watch-btn-style {
     width: 126px;
@@ -163,9 +180,15 @@ h1 {
     text-transform: uppercase;
     font-size: 45px;
     font-family: "Manuka", sans-serif;
-    font-weight: bold;  
+    font-weight: bold;
+    margin-right: 45px;  
 }
-
+.watch-btn-style:hover {
+    border-color: rgb(61, 82, 143);
+    background: linear-gradient(0deg, rgba(99, 116, 165, 0) 0%, rgba(10, 10, 10, 0.4) 100%), rgb(99, 116, 165);
+    transition: background-color 0.4s ease-in-out;
+    
+}
 .watch-btn-style a {
     text-decoration: none;
     color: white;
@@ -179,7 +202,7 @@ h1 {
     min-width: 240px;
     min-height: 114px;
     background-color: black;
-    opacity: 70%;
+    background-color: rgba(0,0,0,0.7);
     border: none;
     clip-path: polygon(
         0 0,
@@ -198,23 +221,26 @@ h1 {
     font-size: 18px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase;
-    gap: 10px;
-    opacity: 100%;    
+    gap: 10px;  
 }
 .only-netflix-button img {
     width: 120px;
     height: auto;
 }
+
 .only-netflix-container{
     display: grid;
     justify-items: end;
     align-items: end;
+    padding-right: 45px;
 }
 .scroll-btns-container-section-1 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 20px;
+    padding-right: 45px;
+    margin-top: 20px;
 }
 .scroll-btn-section-1-style {
     display: flex;
@@ -225,18 +251,24 @@ h1 {
     min-width: 20px;
     max-height: 20px;
 }
+.scroll-gallery-container {
+    overflow: auto;
+    width: 100%;
+    display: flex;
+}
 .section-1-gallery-container {
     display: flex;
     align-items: flex-start;
+    place-items: center;
     flex-direction: row;
     gap: 1rem;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: visible;
     position: relative;
-    right: -45px;
-    padding-bottom: 10px;
-    max-height: 200px;
+    max-height: 300px;
+    width: 100%;
+    left: 4%;
 }
+
 .section-1-gallery-container img {
     max-width: 330px;
     max-height: 185px;
@@ -247,6 +279,17 @@ h1 {
     position: relative;
     z-index: 1;
     cursor: pointer;
+}
+.section-1-image-container:hover {
+    transform: scale(1.2);
+    z-index: 5;
+    transition: transform 0.36s ease;
+}
+.section-1-image-container:hover .arcane-youtube-btn-container {
+    transform: scale(1.15);
+}
+.arcane-youtube-btn-container {
+    transition: transform 0.5s ease-in-out;
 }
 .section-1-gallery-text {
     display: flex;
@@ -280,6 +323,7 @@ h1 {
     max-width: 60px;
     height: auto;
 }
+/* ANIMATIONS */
 /* MEDIA QUERYS */
 @media (min-width: 1024px ) {
     nav  {   
