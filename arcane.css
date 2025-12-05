@@ -174,6 +174,7 @@ li {
     width: 100%;
     height: 100%;
     padding: 25px 0px;
+    overflow: hidden;   /* evita que el difuminado se salga */
 }
 .bg-arcane-video {
     position: absolute;
@@ -191,6 +192,16 @@ li {
     position: relative;
     z-index: 1;
     row-gap: 20px;
+}
+.arcane-netflix-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px; /* tamaño del difuminado, puedes modificarlo */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    pointer-events: none; /* no bloquea clics */
 }
 .arcane-title-watch-container {
     display: flex;
@@ -423,6 +434,7 @@ h1 {
         justify-items: center;
         padding: 0px;
     }
+    
     .arcane-title-style {
         margin: 0px;
     }
