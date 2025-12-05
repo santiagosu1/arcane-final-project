@@ -13,7 +13,11 @@
     font-weight: bold;
     font-style: normal;
 }
-
+:root {
+    --title-font-1: "Manuka", sans-serif;
+    --normal-font-1: "Inter", sans-serif;
+    --header-font: "Mark W05 Medium", "Overpass", sans-serif;
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -55,7 +59,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    font-family: "Mark W05 Medium", "Overpass", sans-serif;
+    font-family: var(--header-font);
     color: white;
     text-transform: uppercase;
     font-size: 13.2px;
@@ -100,7 +104,7 @@ li {
     background-color: #292929;
     border-radius: 8px;
     border: none;
-    font-family: "Mark W05 Medium", "Overpass", sans-serif;
+    font-family: var(--header-font);
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 13.2px;
@@ -124,6 +128,7 @@ li {
     height: 48px;
     width: 48px;
 }
+/* HEADER MEDIA QUERYS */
 @media (min-width: 1024px ) {
     nav  {   
         margin-left: 30px;
@@ -206,7 +211,7 @@ h1 {
     letter-spacing: 0px;
     font-weight: bold;
     font-size: 45px;
-    font-family: "Manuka", sans-serif;
+    font-family: var(--title-font-1);
 }
 .arcane-title-style {
     display: flex;
@@ -222,7 +227,7 @@ h1 {
     border-color: rgb(99, 116, 165);
     text-transform: uppercase;
     font-size: 45px;
-    font-family: "Manuka", sans-serif;
+    font-family: var(--title-font-1);
     font-weight: bold;
     margin-right: 45px;  
 }
@@ -340,7 +345,7 @@ h1 {
     color: white;
     position: absolute;
     z-index: 2;
-    font-family: "Inter", sans-serif;
+    font-family: var(--normal-font-1);
     font-weight: 400;
     font-size: 17px;
     text-transform: uppercase;
@@ -366,13 +371,13 @@ h1 {
     height: auto;
 }
 /* ANIMATIONS */
-/* MEDIA QUERYS */
+/* TABLETS MEDIA QUERYS */
 @media (max-width: 1024px ) {
     .arcane-netflix-container {
         min-height: 730px;
     }
     .arcane-netflix-content-container {
-        grid-template-rows: 250px minmax(auto, 120px) minmax(auto,30px) 1fr;
+        grid-template-rows: 400px minmax(auto, 120px) minmax(auto,30px);
     }
     .only-netflix-container {
         justify-items: start;
@@ -391,7 +396,7 @@ h1 {
     letter-spacing: 0px;
     font-weight: bold;
     font-size: 40px;
-    font-family: "Manuka", sans-serif;
+    font-family: var(--title-font-1);
     }
     .section-1-image-container:hover {
         transform: scale(1);
@@ -403,22 +408,66 @@ h1 {
         max-width: 115px;
         font-size: 40px;
     }
-
+    .scroll-btns-container-section-1 {
+        display: none;
+    }
+    .scroll-gallery-container {
+        min-height: 220px;
+    }
+}
+/* MOBILE MEDIA QUERYS */
+@media (max-width: 700px ) {
+    .arcane-netflix-content-container {
+        grid-template-rows: 500px minmax(160px, 120px) minmax(auto,30px);
+        width: 100%;
+        justify-items: center;
+        padding: 0px;
+    }
+    .arcane-title-style {
+        margin: 0px;
+    }
+    .arcane-title-style img {
+        max-width: 80%;
+    }
+    .arcane-title-watch-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .watch-btn-style {
+        margin: 0px;
+    }
+    .only-netflix-container {
+        grid-row: 4;
+        justify-items: center;
+        width: 100%;
+        padding: 0;
+    }
+    .only-netflix-button {
+        width: 90%;
+        height: auto;
+    }
+    h1 {
+        max-width: 200px;
+        font-size: 34px;
+        line-height: 36px;
+    }
 }
 /* SECTION 2 */
 .arcane-sinopsis-container {
     min-width: 100%;
-    min-height: 640px;
     position: relative;
 }
 .arcane-sinopsis-content-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    place-items: center;
+    align-items: center;
     position: relative;
     z-index: 2;
     color: white;
-    padding: 100px 0px;
+    padding: 100px 50px;
+    min-height: 640px;
+    gap: 30px;
 }
 .arcane-bg-image-style {
     position: absolute;
@@ -428,6 +477,7 @@ h1 {
     height: 100%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    object-fit: cover;
 }
 .arcane-wallpaper-section-2-container {
     width: 100%;
@@ -436,8 +486,9 @@ h1 {
     justify-content: center;
 }
 .arcane-wallpaper-section-2-container img{
-    max-width: 688px;
-    max-height: 386px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 .arcane-section-2-sinopsis {
     display: flex;
@@ -445,14 +496,54 @@ h1 {
     gap: 30px;
 }
 .arcane-section-2-sinopsis p {
-font-family: "Inter", sans-serif;
-max-width: 650px;
-font-size: 18px;
+    font-family: var(--normal-font-1);
+    max-width: 650px;
+    font-size: 18px;
 }
 .arcane-section-2-h2-style {
     display: flex;
     place-items: start;
     flex-direction: column;
     text-transform: uppercase;
-    font-family: "Manuka", sans-serif;
+    font-family: var(--title-font-1);
+}
+.arcane-section-2-h2-style-1{
+    font-size: 46px;
+}
+.arcane-section-2-h2-style-2{
+    font-size: 132px;
+    line-height: 100px;
+} 
+/* SECTION 2 MEDIA QUERYS */
+
+/* TABLET MEDIA QUERYS */
+@media (max-width: 1024px ) {
+    .arcane-sinopsis-content-container {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       padding: 10px 35px;
+       padding-bottom: 50px;
+    }
+    .arcane-section-2-sinopsis p {
+        font-size: 16px;
+        max-width: 100%;
+    }
+    .arcane-section-2-h2-style-1 {
+        font-size: 36px;
+    }
+    .arcane-section-2-h2-style-2 {
+        font-size: 102px;
+        line-height: 80px;
+    }
+}
+/* MOBILE MEDIA QUERYS */
+@media (max-width: 1024px ) {
+    .arcane-sinopsis-content-container {
+        padding: 0px 20px;
+        padding-top: 60px;
+    }
+     .arcane-section-2-sinopsis p {
+        font-size: 15px;
+     }
 }
