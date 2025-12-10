@@ -599,7 +599,7 @@ h1 {
     display: flex;
     font-family: var(--normal-font-1);
     overflow: auto;
-    gap: 5px;
+    gap: 30px;
 }
 .gallery-section-3-content-container img {
     max-width: 100%;
@@ -607,7 +607,7 @@ h1 {
 }
 .gallery-section-3-news-container {
     display: grid;
-    min-width: 34.5%;
+    min-width: 31.3%;
     gap: 10px;
     grid-template-rows: 270px minmax(auto, 160px);
 }
@@ -660,7 +660,7 @@ h1 {
 .gallery-images-sec-3-wrapper {
     overflow: hidden;
     max-width: 480px;
-    max-height: 280px;
+    max-height: 255px;
     z-index: 50;
 }
 
