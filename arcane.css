@@ -667,6 +667,7 @@ h1 {
 /* Imagen base */
 .gallery-images-sec-3-style {
     object-fit: cover;
+    position: relative;
     transition: transform 0.36s ease;
     z-index: 40;
 }
@@ -675,4 +676,16 @@ h1 {
 .gallery-images-sec-3-style:hover {
 
     transform: scale(1.1);
+}
+.btn-sec-3-style {
+    display: flex;
+    position: relative;
+}
+.sec-3-btn-style {
+    position: absolute;
+    left: 88%;
+    top: 80%;
+    z-index: 50;
+    width: 10%;
+
 }
