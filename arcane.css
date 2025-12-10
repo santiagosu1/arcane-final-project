@@ -17,6 +17,9 @@
     --title-font-1: "Manuka", sans-serif;
     --normal-font-1: "Inter", sans-serif;
     --header-font: "Mark W05 Medium", "Overpass", sans-serif;
+    --background-color:rgb(10, 10, 10);
+    --text-base-color:rgb(255, 255, 255);
+    --bluelight-color:rgb(167, 182, 227);
 }
 * {
     box-sizing: border-box;
@@ -26,6 +29,10 @@
 /* NAVEGATION */
 header {
     display: grid;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 999;
     grid-template-columns: 160px 5fr 1fr;
     align-items: center;
     padding-left: 40px;
@@ -33,7 +40,11 @@ header {
     background-color: black;
     min-height: 80px;
 }
-
+.header-container-style {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+}
 .logos-style {
     display: flex;
     align-items: center;
@@ -74,7 +85,7 @@ li {
     min-height: 80px;
 }
 .spacer-decoration {
-    border: 3px solid rgb(91, 91, 91);
+    /* border: 3px solid rgb(91, 91, 91); */
     border-radius: 1px;
     width: 50px;
     margin: 0 auto;
@@ -167,7 +178,7 @@ li {
         align-items: center;
         font-size: 25px;
     }  
-}  
+}
 /* SECTION 1 */
 .arcane-netflix-container {
     position: relative;
@@ -199,9 +210,9 @@ li {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 300px; /* tamaño del difuminado, puedes modificarlo */
+    height: 300px;
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-    pointer-events: none; /* no bloquea clics */
+    pointer-events: none;
 }
 .arcane-title-watch-container {
     display: flex;
@@ -270,6 +281,7 @@ h1 {
         calc(100% - 25px) 100%,
         0 100%
     );
+    
 }
 
 .only-netflix-button-a
@@ -483,7 +495,7 @@ h1 {
 }
 .arcane-bg-image-style {
     position: absolute;
-    top: 47%;
+    top: 50%;
     left: 50%;
     width: 100%;
     height: 100%;
@@ -550,12 +562,97 @@ h1 {
     }
 }
 /* MOBILE MEDIA QUERYS */
-@media (max-width: 1024px ) {
+@media (max-width: 700px ) {
     .arcane-sinopsis-content-container {
-        padding: 0px 20px;
+        padding: 0px 30px;
         padding-top: 60px;
     }
+    .arcane-section-2-h2-style-1 {
+        font-size: 34px;
+    }
+    .arcane-section-2-h2-style-2 {
+        font-size: 77px;
+    }
      .arcane-section-2-sinopsis p {
-        font-size: 15px;
+        font-size: 14px;
+        line-height: 22px;
      }
+
+}
+
+/* SECTION 3 CSS */
+.gallery-section-3-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--background-color) ;
+    color: var(--text-base-color);
+    padding: 30px 40px;
+    max-width: auto;
+}
+.gallery-section-3-container h3 {
+    font-family: var(--title-font-1);
+    font-size: 58px;
+    text-transform: uppercase;
+}
+.gallery-section-3-content-container {
+    display: flex;
+    font-family: var(--normal-font-1);
+    overflow: auto;
+}
+.gallery-section-3-content-container img {
+    max-width: 96%;
+    max-height: 96%;
+}
+.gallery-section-3-news-container {
+    display: grid;
+    min-width: 34.5%;
+    gap: 10px;
+    grid-template-rows: auto minmax(auto, 160px);
+}
+.arcane-news-content-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.arcane-updates-content-container {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+}
+.arcane-updates-content-container p {
+    font-weight: 700;
+    color: var(--bluelight-color);
+}
+.arcane-sec-3-info-style {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 440px;
+}
+.arcane-sec-3-info-style h4 {
+    font-size: 22px;
+    line-height: 32px;
+}
+.arcane-sec-3-info-style p {
+    line-height: 24px;
+}
+
+.btns-section-3-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+.scroll-btns-container-section-3 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+.sec-3-spacer {
+    border: 1px white solid;
+    display: block;
+    width: 100%;
+    height: 0px;
 }
