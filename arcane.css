@@ -664,7 +664,6 @@ h1 {
     z-index: 50;
 }
 
-/* Imagen base */
 .gallery-images-sec-3-style {
     object-fit: cover;
     position: relative;
@@ -672,7 +671,6 @@ h1 {
     z-index: 40;
 }
 
-/* Zoom controlado */
 .gallery-images-sec-3-style:hover {
 
     transform: scale(1.1);
@@ -688,4 +686,56 @@ h1 {
     z-index: 50;
     width: 10%;
 
+}
+/* ARCANE SECTION 4 */
+.spotify-main-container {
+    display: flex;
+    align-items: center;
+}
+.spotify-bg-layout {
+    position: relative;
+    z-index: 40;
+}
+.spotify-content-container {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    z-index: 50;
+    color: var(--text-base-color);
+    padding: 30px 50px;
+    width: 100%;
+
+}
+.music-descript-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0px 30px;
+    font-family: var(--normal-font-1);
+    font-size: 18px;
+    line-height: 27px;
+}
+.music-descript-container h5 {
+    font-family: var(--title-font-1);
+}
+
+.music-descript-container span  {
+    font-weight: 700;
+    font-size: 19px;
+    text-transform: uppercase;
+}
+
+.spotify-music-arcane-style {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-transform: uppercase;
+}
+.arcane-music-icons-style {
+    display: flex;
+    gap: 25px;
+}
+.arcane-music-icons-style svg {
+    max-width: 24px;
+    max-height: 24px;
 }
