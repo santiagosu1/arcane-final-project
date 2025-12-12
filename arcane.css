@@ -693,6 +693,17 @@ h1 {
 }
 /* ARCANE SECTION 4 */
 /* ARCANE SECTION 4 SPOTIFY MUSIC PLAYER */
+.spotify-main-container {
+    display: flex;
+    min-height: 640px;
+    align-items: center;
+}
+.spotify-bg-layout {
+    min-height: 640px;
+    position: relative;
+    overflow: hidden;
+    z-index: 40;
+}
 .spotify-music-player-container {
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -701,10 +712,12 @@ h1 {
     max-width: 95%;
     max-height: 80%;
 }
+/* SPOTIFY TOP-PART */
 .spotify-music-player-container-top-part {
     display: flex;
     gap: 30px;
     padding: 30px 20px;
+    max-height: 220px;
 }
 .spotify-icon-style {
     position: relative;
@@ -827,17 +840,7 @@ h1 {
     height: auto;
 }
 /* ARCANE SECTION 4 MUSIC INFO */
-.spotify-main-container {
-    display: flex;
-    min-height: 640px;
-    align-items: center;
-}
-.spotify-bg-layout {
-    min-height: 640px;
-    position: relative;
-    overflow: hidden;
-    z-index: 40;
-}
+
 .spotify-content-container {
     position: absolute;
     display: grid;
@@ -881,4 +884,41 @@ h1 {
 .arcane-music-icons-style svg {
     max-width: 24px;
     max-height: 24px;
+}
+
+/* SPOTIFY BOTTOM-PART */
+
+.spotify-music-player-container-bottom-part {
+    background-color: var(--spotify-dark-color);
+    font-family: var(--normal-font-1);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;  
+}
+.spotify-songs-container {
+    display: grid;
+    grid-template-rows: auto 80px 1fr;
+    padding: 30px;
+}
+.spotify-songs-container span{
+    font-size: 14px;
+}
+.spotify-songs-container p{
+    font-size: 10px;
+}
+.spotify-songs-content {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.songs-name-style {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.explicit-song-style {
+    display: flex;
+    gap: 5px;
+}
+.explicit-song-style span{
+    font-size: 8px;
 }
