@@ -610,10 +610,10 @@ h1 {
     max-height: 105%;
 }
 .gallery-section-3-news-container {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     min-width: 31.3%;
-    gap: 10px;
-    grid-template-rows: 270px minmax(auto, 160px);
+    gap: 15px;
 }
 .arcane-news-content-container{
     display: flex;
@@ -633,7 +633,7 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 440px;
+    max-width: 100%;
 }
 .arcane-sec-3-info-style h4 {
     font-size: 22px;
@@ -691,8 +691,42 @@ h1 {
     width: 10%;
 
 }
+/* MEDIA QUERYS SECTION 3 */
+@media (max-width: 1024px ) {
+    .gallery-section-3-news-container {
+        min-width: 49%;
+    }
+    .gallery-section-3-content-container {
+        gap: 20px;
+    }
+    .gallery-section-3-container h3 {
+        font-size: 46px;
+    }
+    .arcane-sec-3-info-style h4 {
+        font-size: 18px;
+    }
+    .arcane-sec-3-info-style p {
+        font-size: 14px;
+    }    
+}
+@media (max-width: 560px ) {
+    .gallery-section-3-news-container {
+        min-width: 100%;
+    }    
+}
 /* ARCANE SECTION 4 */
 /* ARCANE SECTION 4 SPOTIFY MUSIC PLAYER */
+.spotify-content-container {
+    position: absolute;
+    display: flex;
+    gap: 35px;
+    z-index: 50;
+    color: var(--text-base-color);
+    padding: 30px 50px;
+    width: 100%;
+    align-items: center;
+
+}
 .spotify-main-container {
     display: flex;
     min-height: 640px;
@@ -709,8 +743,10 @@ h1 {
     grid-template-rows: 1fr 1fr;
     border-radius: 20px;
     background-color: var(--spotify-base-color);
-    max-width: 95%;
     max-height: 80%;
+}
+.spotify-main-player-container {
+    min-width: 48%;
 }
 /* SPOTIFY TOP-PART */
 .spotify-music-player-container-top-part {
@@ -754,7 +790,6 @@ h1 {
 }
 
 .spotify-arcane-wallpaper-style {
-    width: 240px;
     height: 100%;
     z-index: 50;
 }
@@ -769,6 +804,12 @@ h1 {
 .spotify-title-container a {
     text-decoration: none;
     color: var(--text-base-color);
+}
+.spotify-title-container-playlist-a {
+    font-size: 24px;
+    font-weight: 700;
+    min-width: 100%;
+
 }
 .save-on-container {
     display: flex;
@@ -809,7 +850,8 @@ h1 {
     gap: 20px;
     max-height: 3.75rem;
     position: relative;
-    left: 15%;
+    left: 10%;
+    top: 80%;
 }
 .players-btn-container button {
     border: none;
@@ -841,17 +883,6 @@ h1 {
 }
 /* ARCANE SECTION 4 MUSIC INFO */
 
-.spotify-content-container {
-    position: absolute;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    z-index: 50;
-    color: var(--text-base-color);
-    padding: 30px 50px;
-    width: 100%;
-    align-items: center;
-
-}
 .music-descript-container {
     display: flex;
     flex-direction: column;
@@ -892,12 +923,15 @@ h1 {
     background-color: var(--spotify-dark-color);
     font-family: var(--normal-font-1);
     border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;  
+    border-bottom-right-radius: 16px; 
+    width: 100%;
+    min-width: 0; 
 }
 .spotify-songs-container {
     display: grid;
     grid-template-rows: auto 80px 1fr;
     padding: 30px;
+    min-width: 0;
 }
 .spotify-songs-container span{
     font-size: 14px;
@@ -921,4 +955,7 @@ h1 {
 }
 .explicit-song-style span{
     font-size: 8px;
+}
+@media (max-width: 1024px ) {
+
 }
