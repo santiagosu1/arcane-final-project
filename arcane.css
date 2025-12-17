@@ -1,22 +1,41 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @font-face {
     font-family: "Mark W05 Medium";
     src: url("https://db.onlinewebfonts.com/t/b621d1ffb46493164fd62fb7a83ab0ff.woff2") format("woff2"),
         url("https://db.onlinewebfonts.com/t/b621d1ffb46493164fd62fb7a83ab0ff.woff") format("woff"),
         url("https://db.onlinewebfonts.com/t/b621d1ffb46493164fd62fb7a83ab0ff.ttf") format("truetype");
-    font-weight: normal;
+    font-weight: normal;  
+}
+@font-face {
+    font-family: "Manuka";
+    src: url("./fonts/manuka-bold.ttf") format("truetype");
+    font-weight: bold;
     font-style: normal;
 }
+:root {
+    --title-font-1: "Manuka", sans-serif;
+    --normal-font-1: "Inter", sans-serif;
+    --header-font: "Mark W05 Medium", "Overpass", sans-serif;
+    --background-color:rgb(10, 10, 10);
+    --text-base-color:rgb(255, 255, 255);
+    --bluelight-color:rgb(167, 182, 227);
+    --spotify-base-color:#006000;
+    --spotify-dark-color:#004e00;
+    --spotify-more-dark-color:#003000;
 
+}
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
-header { 
+/* NAVEGATION */
+header {
     display: grid;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 999;
     grid-template-columns: 160px 5fr 1fr;
     align-items: center;
     padding-left: 40px;
@@ -24,8 +43,11 @@ header {
     background-color: black;
     min-height: 80px;
 }
-
-
+.header-container-style {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+}
 .logos-style {
     display: flex;
     align-items: center;
@@ -40,6 +62,8 @@ header {
 nav {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    min-height: 100%;
 }
 
 nav ul {
@@ -49,12 +73,26 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    font-family: "Mark W05 Medium", "Overpass", sans-serif;
+    font-family: var(--header-font);
     color: white;
     text-transform: uppercase;
     font-size: 13.2px;
     letter-spacing: 1px;
     font-weight: 900;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 80px;
+}
+.spacer-decoration {
+    /* border: 3px solid rgb(91, 91, 91); */
+    border-radius: 1px;
+    width: 50px;
+    margin: 0 auto;
+    display: block;
 }
 .sign-in-style {
     display: flex;
@@ -80,7 +118,7 @@ nav ul li a {
     background-color: #292929;
     border-radius: 8px;
     border: none;
-    font-family: "Mark W05 Medium", "Overpass", sans-serif;
+    font-family: var(--header-font);
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 13.2px;
@@ -105,7 +143,7 @@ nav ul li a {
     height: 48px;
     width: 48px;
 }
-/* MEDIA QUERYS */
+/* HEADER MEDIA QUERYS */
 @media (min-width: 1024px ) {
     nav  {   
         margin-left: 30px;
@@ -144,4 +182,1116 @@ nav ul li a {
         align-items: center;
         font-size: 25px;
     }  
-}  
+}
+/* SECTION 1 */
+.arcane-netflix-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 25px 0px;
+    overflow: hidden;   /* evita que el difuminado se salga */
+}
+.bg-arcane-video {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+.arcane-netflix-content-container {
+    display: grid;
+    grid-template-rows: 1fr minmax(auto, 200px) minmax(auto,30px) 1fr;
+    position: relative;
+    z-index: 1;
+    row-gap: 20px;
+}
+.arcane-netflix-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    pointer-events: none;
+}
+.arcane-title-watch-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.arcane-title-watch-container img {
+    max-width: 450px;
+    max-height: 182px;
+}
+h1 {
+    width: 260px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    font-weight: bold;
+    font-size: 45px;
+    font-family: var(--title-font-1);
+}
+.arcane-title-style {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 10px;
+    margin-left: 45px;
+}
+.watch-btn-style {
+    width: 126px;
+    height: 76px;
+    background: linear-gradient(0deg, rgba(99, 116, 165, 0) 0%, rgba(10, 10, 10, 0.4) 100%), rgb(75, 96, 158);
+    border-color: rgb(99, 116, 165);
+    text-transform: uppercase;
+    font-size: 45px;
+    font-family: var(--title-font-1);
+    font-weight: bold;
+    margin-right: 45px;  
+}
+.watch-btn-style:hover {
+    border-color: rgb(61, 82, 143);
+    background: linear-gradient(0deg, rgba(99, 116, 165, 0) 0%, rgba(10, 10, 10, 0.4) 100%), rgb(99, 116, 165);
+    transition: background-color 0.4s ease-in-out;
+    
+}
+.watch-btn-style a {
+    text-decoration: none;
+    color: white;
+}
+
+.only-netflix-button {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: center;
+    min-width: 240px;
+    min-height: 114px;
+    background-color: black;
+    background-color: rgba(0,0,0,0.7);
+    border: none;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - 25px),
+        calc(100% - 25px) 100%,
+        0 100%
+    );
+    
+}
+
+.only-netflix-button-a
+{   display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    gap: 10px;  
+}
+.only-netflix-button img {
+    width: 120px;
+    height: auto;
+}
+
+.only-netflix-container{
+    display: grid;
+    justify-items: end;
+    align-items: end;
+    padding-right: 45px;
+}
+.scroll-btns-container-section-1 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding-right: 45px;
+    margin-top: 20px;
+}
+.scroll-btn-section-1-style {
+    display: flex;
+    background-color: transparent;
+    border: none;
+}
+.scroll-btn-section-1-style img {
+    min-width: 20px;
+    max-height: 20px;
+}
+.scroll-gallery-container {
+    overflow: auto;
+    width: 100%;
+    display: flex;
+}
+.section-1-gallery-container {
+    display: flex;
+    align-items: flex-start;
+    place-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    overflow: visible;
+    position: relative;
+    max-height: 300px;
+    width: 100%;
+    left: 4%;
+}
+
+.section-1-gallery-container img {
+    max-width: 330px;
+}
+.section-1-image-container {
+    display: flex;
+    place-items: center;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+.section-1-image-container:hover {
+    transform: scale(1.2);
+    z-index: 5;
+    transition: transform 0.36s ease;
+}
+.section-1-image-container:hover .arcane-youtube-btn-container {
+    transform: scale(1.15);
+}
+.arcane-youtube-btn-container {
+    transition: transform 0.4s ease-out;
+}
+.section-1-gallery-text {
+    display: flex;
+    place-items: end;
+    bottom: 10%;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    font-family: var(--normal-font-1);
+    font-weight: 400;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding-left: 10px;
+    max-width: 300px;
+}
+.arcane-btn-image {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;    
+}
+.arcane-youtube-btn-container {
+    position: absolute;
+    bottom: 35%;
+    left: 42%;
+    z-index: 2;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.arcane-youtube-btn-container img {
+    max-width: 60px;
+    height: auto;
+}
+/* ANIMATIONS */
+/* TABLETS MEDIA QUERYS */
+@media (max-width: 1024px ) {
+    .arcane-netflix-container {
+        min-height: 730px;
+    }
+    .arcane-netflix-content-container {
+        grid-template-rows: 400px minmax(auto, 120px) minmax(auto,30px);
+    }
+    .only-netflix-container {
+        justify-items: start;
+        padding-left: 45px;
+        padding-right: 0px;
+    }
+    .arcane-title-style img {
+        max-width: 400px;
+    }
+    h1 {
+    width: 240px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: var(--title-font-1);
+    }
+    .section-1-image-container:hover {
+        transform: scale(1);
+        z-index: 5;
+        transition: transform 0.36s ease;
+    }
+    .watch-btn-style {
+        max-height: 71px;
+        max-width: 115px;
+        font-size: 40px;
+    }
+    .scroll-btns-container-section-1 {
+        display: none;
+    }
+    .scroll-gallery-container {
+        min-height: 220px;
+    }
+}
+/* MOBILE MEDIA QUERYS */
+@media (max-width: 700px ) {
+    .arcane-netflix-content-container {
+        grid-template-rows: 500px minmax(160px, 120px) minmax(auto,30px);
+        width: 100%;
+        justify-items: center;
+        padding: 0px;
+    }
+    
+    .arcane-title-style {
+        margin: 0px;
+    }
+    .arcane-title-style img {
+        max-width: 80%;
+    }
+    .arcane-title-watch-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .watch-btn-style {
+        margin: 0px;
+    }
+    .only-netflix-container {
+        grid-row: 4;
+        justify-items: center;
+        width: 100%;
+        padding: 0;
+    }
+    .only-netflix-button {
+        width: 90%;
+        height: auto;
+    }
+    h1 {
+        max-width: 200px;
+        font-size: 34px;
+        line-height: 36px;
+    }
+}
+/* SECTION 2 */
+.arcane-sinopsis-container {
+    min-width: 100%;
+    position: relative;
+}
+.arcane-sinopsis-content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 100px 50px;
+    min-height: 640px;
+    gap: 30px;
+}
+.arcane-bg-image-style {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    object-fit: cover;
+}
+.arcane-wallpaper-section-2-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.arcane-wallpaper-section-2-container img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.arcane-section-2-sinopsis {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.arcane-section-2-sinopsis p {
+    font-family: var(--normal-font-1);
+    max-width: 650px;
+    font-size: 18px;
+}
+.arcane-section-2-h2-style {
+    display: flex;
+    place-items: start;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-family: var(--title-font-1);
+}
+.arcane-section-2-h2-style-1{
+    font-size: 2.875rem;
+}
+.arcane-section-2-h2-style-2{
+    font-size: 8.25rem;
+    line-height: 0.8;
+} 
+/* SECTION 2 MEDIA QUERYS */
+
+/* TABLET MEDIA QUERYS */
+@media (max-width: 1024px ) {
+    .arcane-sinopsis-content-container {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       padding: 10px 35px;
+       padding-bottom: 50px;
+    }
+    .arcane-section-2-sinopsis p {
+        font-size: 16px;
+        max-width: 100%;
+    }
+    .arcane-section-2-h2-style-1 {
+        font-size: 36px;
+    }
+    .arcane-section-2-h2-style-2 {
+        font-size: 102px;
+        line-height: 80px;
+    }
+}
+/* MOBILE MEDIA QUERYS */
+@media (max-width: 700px ) {
+    .arcane-sinopsis-content-container {
+        padding: 0px 30px;
+        padding-top: 60px;
+    }
+    .arcane-section-2-h2-style-1 {
+        font-size: 34px;
+    }
+    .arcane-section-2-h2-style-2 {
+        font-size: 77px;
+    }
+     .arcane-section-2-sinopsis p {
+        font-size: 14px;
+        line-height: 22px;
+     }
+
+}
+
+/* SECTION 3 CSS */
+.gallery-section-3-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--background-color) ;
+    color: var(--text-base-color);
+    padding: 30px 40px;
+}
+.gallery-section-3-container h3 {
+    font-family: var(--title-font-1);
+    font-size: 58px;
+    text-transform: uppercase;
+}
+.gallery-section-3-content-container {
+    display: flex;
+    font-family: var(--normal-font-1);
+    overflow: auto;
+    gap: 30px;
+}
+.gallery-section-3-content-container img {
+    max-width: 100%;
+    max-height: 105%;
+}
+.gallery-section-3-news-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 31.3%;
+    gap: 15px;
+}
+.arcane-news-content-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.arcane-updates-content-container {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+}
+.arcane-updates-content-container p {
+    font-weight: 700;
+    color: var(--bluelight-color);
+}
+.arcane-sec-3-info-style {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+}
+.arcane-sec-3-info-style h4 {
+    font-size: 22px;
+    line-height: 32px;
+}
+.arcane-sec-3-info-style p {
+    line-height: 24px;
+}
+
+.btns-section-3-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+.scroll-btns-container-section-3 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+.sec-3-spacer {
+    border: 1px white solid;
+    display: block;
+    width: 100%;
+    height: 0px;
+}
+.gallery-images-sec-3-wrapper {
+    overflow: hidden;
+    max-width: 480px;
+    max-height: 255px;
+    z-index: 50;
+}
+
+.gallery-images-sec-3-style {
+    object-fit: cover;
+    position: relative;
+    transition: transform 0.36s ease;
+    z-index: 40;
+}
+
+.gallery-images-sec-3-style:hover {
+
+    transform: scale(1.1);
+}
+.btn-sec-3-style {
+    display: flex;
+    position: relative;
+}
+.sec-3-btn-style {
+    position: absolute;
+    left: 88%;
+    top: 80%;
+    z-index: 50;
+    width: 10%;
+
+}
+/* MEDIA QUERYS SECTION 3 */
+@media (max-width: 1024px ) {
+    .gallery-section-3-news-container {
+        min-width: 49%;
+    }
+    .gallery-section-3-content-container {
+        gap: 20px;
+    }
+    .gallery-section-3-container h3 {
+        font-size: 46px;
+    }
+    .arcane-sec-3-info-style h4 {
+        font-size: 18px;
+    }
+    .arcane-sec-3-info-style p {
+        font-size: 14px;
+    }    
+}
+@media (max-width: 560px ) {
+    .gallery-section-3-news-container {
+        min-width: 100%;
+    }    
+}
+/* ARCANE SECTION 4 */
+/* ARCANE SECTION 4 SPOTIFY MUSIC PLAYER */
+.spotify-content-container {
+    position: absolute;
+    display: flex;
+    gap: 35px;
+    z-index: 50;
+    color: var(--text-base-color);
+    padding: 30px 50px;
+    width: 100%;
+    align-items: center;
+
+}
+.spotify-main-container {
+    display: flex;
+    min-height: 640px;
+    align-items: center;
+    
+}
+.spotify-bg-layout {
+    min-height: 640px;
+    position: relative;
+    overflow: hidden;
+    z-index: 40;
+}
+.spotify-music-player-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    border-radius: 20px;
+    background-color: var(--spotify-base-color);
+    max-height: 80%;
+    min-width: 48%;
+}
+.spotify-main-player-container {
+    min-width: 48%;
+}
+/* SPOTIFY TOP-PART */
+.spotify-music-player-container-top-part {
+    display: flex;
+    gap: 30px;
+    padding: 30px 20px;
+    max-height: 220px;
+    min-width: 30%;
+}
+.spotify-icon-style {
+    position: absolute;
+    bottom: 84%;
+    right: 53%;
+    width: 26px;
+    height: 35px;
+}
+
+.spotify-arcane-wallpaper-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    max-width: 152px;
+    max-height: 152px;
+    min-width: 152px;
+    z-index: 40;
+    border-radius: 14px;
+}
+.spotify-arcane-wallpaper-container p{
+    position: absolute;
+    left: 5%;
+    top: 70%;
+    z-index: 60;
+    width: 120px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--normal-font-1);
+}
+.spotify-svg-container {
+    display: flex;
+    position: absolute;
+    gap: 6px;
+    left: 5%;
+    top: 4%;
+    z-index: 60;
+}
+
+.spotify-arcane-wallpaper-style {
+    height: 100%;
+    z-index: 50;
+}
+.spotify-title-container {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--normal-font-1);
+    padding: 20px 0px;
+    gap: 10px;
+    width: 100%;
+}
+.spotify-title-container a {
+    text-decoration: none;
+    color: var(--text-base-color);
+}
+.spotify-title-container-playlist-a {
+    font-size: 24px;
+    font-weight: 700;
+    min-width: 130%;
+
+}
+.save-on-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.save-on-container span {
+    font-size: 14px;       
+}
+.save-on-container svg {
+    width: 24px;
+}
+.preview-spotify-title-style {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.preview-spotify-title-style p {
+    display: flex;
+    font-size: 9px;
+    font-weight: 600;
+    width: 44px;
+    height: 18px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--spotify-more-dark-color);
+}
+.preview-spotify-title-style a {
+    opacity: 70%;
+}
+.players-btn-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 30px;
+    gap: 20px;
+    max-height: 3.75rem;
+    position: absolute;
+    left: 36%;
+    bottom: 50%;
+}
+.players-btn-container button {
+    border: none;
+    background-color: transparent;
+}
+.back-forward-btn-container {
+    display: flex;
+    gap: 20px;
+}
+.play-back-btn-style{
+    width: 16px;
+    height: auto;
+}
+.play-btn-container {
+    display: flex;
+    min-width: 50px;
+    gap: 40px;
+    margin-bottom: 10px;
+}
+.path-btn-container {
+    width: 24px;
+    height: auto;
+    text-align: start;
+    margin-bottom: 10px;
+}
+.play-btn-container {
+    width: 50px;
+    height: auto;
+}
+/* ARCANE SECTION 4 MUSIC INFO */
+
+.music-descript-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0px 30px;
+    font-family: var(--normal-font-1);
+    font-size: 18px;
+    line-height: 27px;
+}
+.h5-first-title-style, .h5-second-title-style {
+    font-family: var(--title-font-1);
+    text-transform: uppercase;
+}
+.h5-first-title-style {
+    font-size: 46px;
+    line-height: 30px
+}
+.h5-second-title-style {
+    font-size: 132px;
+    max-width: 100%;
+    line-height: 105px;
+}
+
+.music-descript-container span  {
+    font-weight: 700;
+    font-size: 19px;
+    text-transform: uppercase;
+}
+
+.spotify-music-arcane-style {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-transform: uppercase;
+}
+.arcane-music-icons-style {
+    display: flex;
+    gap: 25px;
+}
+.arcane-music-icons-style svg {
+    max-width: 24px;
+    max-height: 24px;
+}
+
+/* SPOTIFY BOTTOM-PART */
+
+.spotify-music-player-container-bottom-part {
+    background-color: var(--spotify-dark-color);
+    font-family: var(--normal-font-1);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px; 
+    min-width: 0; 
+}
+.spotify-songs-container {
+    display: grid;
+    grid-template-rows: auto 80px 1fr;
+    padding: 30px;
+    min-width: 0;
+}
+.spotify-songs-container span{
+    font-size: 14px;
+}
+.spotify-songs-container p{
+    font-size: 10px;
+}
+.spotify-songs-content {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.songs-name-style {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.explicit-song-style {
+    display: flex;
+    gap: 5px;
+}
+.explicit-song-style span{
+    font-size: 8px;
+}
+/* SECTION 4 MEDIA QUERYS */
+@media (max-width: 1024px ) {
+    .spotify-content-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+    }
+    .music-descript-container {
+        order: -1; /* esto la pone antes del reproductor */
+    }
+
+    .spotify-music-player-container {
+        order: 1; /* opcional, por claridad */
+    }
+    .h5-first-title-style { 
+        font-size: 36px;
+    }
+    .h5-second-title-style { 
+        font-size: 86px;
+    }
+    .spotify-main-container { 
+        min-height: 840px;
+    }
+    .spotify-bg-layout {
+        min-height: 840px;
+    }
+    .music-descript-container { 
+        gap: 10px;
+    }
+    .arcane-music-icons-style { 
+        margin-top: 30px;
+    }
+    .spotify-music-player-container {
+        min-width: 90%;
+        
+    }
+    .players-btn-container {
+        top: 65%;
+        left: 70%;
+    }
+    .spotify-icon-style {
+        bottom: 50%;
+        right: 7%;
+    }
+    .music-descript-container span {
+        font-size: 15px;
+    }
+    .spotify-title-container-playlist-a {
+        min-width: 100%;
+    }
+}
+@media (max-width: 700px ) {
+    .preview-spotify-title-style p {    
+        position: absolute;
+        left: 10%;
+        top: 68%;
+    }
+    .spotify-arcane-wallpaper-container {
+        height: 122px;
+        width: 122px; 
+    }
+     .spotify-music-player-container {
+        max-width: 80%;
+     }
+     .spotify-music-player-container-top-part {
+        gap: 10px;
+     }
+     .spotify-title-container-playlist-a {
+        font-size: 18px;
+     }
+     .save-on-container span {
+        font-size: 12px;
+     }
+    .preview-spotify-title-style a {
+        font-size: 12px;
+     }
+    .spotify-icon-style {
+        bottom: 50%;
+        right: 8%;
+    }
+    .players-btn-container {
+        top: 69%;
+        left: 48%;
+    }
+    .spotify-main-container { 
+        min-height: 100%;
+    }
+    .spotify-bg-layout {
+        min-height: 960px;
+    }
+    .music-descript-container {
+        font-size: 15px;
+        line-height: 22px;
+    }
+    .music-descript-container {
+        gap: 20px;
+    }
+    .h5-second-title-style {
+        line-height: 70px;
+    }
+}
+
+/* SECTION 4 */
+.arcane-form-container {
+    background-color: var(--background-color);
+    color: var(--text-base-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 30px 40px;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    gap: 20px;
+}
+.form-container label {
+    font-family: var(--normal-font-1);
+    font-weight: 700;
+    
+}
+.arcane-form-container h5 {
+    font-family: var(--title-font-1);
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+.form-inputs-top {
+    display: flex;
+    gap: 30px;
+}
+.inputs-top-style {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.arcane-input-style {
+    min-height: 45px;
+    min-width: 300px;
+    padding-left: 10px;
+    font-family: var(--normal-font-1);
+}
+.arcane-message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+.textareaMessage {
+   min-width: 53%;
+   min-height: 170px;
+   padding-left: 10px;
+   padding-top: 10px;
+   font-family: var(--normal-font-1); 
+}
+.arcane-submit-btn {
+    width: 100px;
+    height: 60px;
+    text-transform: uppercase;
+    font-size: 45px;
+    font-family: var(--title-font-1);
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(0deg, rgba(99, 116, 165, 0) 0%, rgba(10, 10, 10, 0.4) 100%), rgb(75, 96, 158);
+    border: none;
+    color: var(--text-base-color);
+    cursor: pointer;
+}
+.arcane-submit-btn:hover {
+    border-color: rgb(61, 82, 143);
+    background: linear-gradient(0deg, rgba(99, 116, 165, 0) 0%, rgba(10, 10, 10, 0.4) 100%), rgb(99, 116, 165);
+    transition: background-color 0.4s ease-in-out;
+}
+.send-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 53%;
+}
+
+/* MEDIA QUERYS SECTION 5 */
+@media (max-width: 1024px ) {
+    .arcane-form-container {
+        padding: 30px 10px;
+    }
+    .form-inputs-top {
+        display: flex;
+        flex-direction: column;
+    }
+    .textareaMessage {
+        min-width: 100%;
+    }
+    .send-btn-container {
+        min-width: 100%;
+    }
+    .arcane-form-container h5 {
+        font-size: 2.8rem;
+    }
+}
+/* FAQ */
+
+.arcane-faq {
+    padding: 20px;    
+}
+.arcane-faq {
+    background: linear-gradient(0deg, rgba(99, 116, 165, 0) 0%, rgba(10, 10, 10, 0.4) 100%), rgb(99, 116, 165);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 50px;
+    color: var(--bluelight-color);
+}
+.arcane-faq h2{
+    font-family: var(--title-font-1);
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: var(--text-base-color);
+}
+.arcane-faq-item {
+    font-family: var(--normal-font-1);
+    font-weight: 300;
+    margin-bottom: 15px;
+    overflow: 0 4px 10px #000000;
+}
+.arcane-faq-item label {
+    font-weight: 300;
+}
+.arcane-faq-item input {
+    display: none; 
+       
+}
+.faq-question {
+    display: block;
+    background: var(--bluelight-color);
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    border-radius: 12px;
+}
+.faq-question:hover { 
+    background: var(--bluelight-color);
+}
+.arcane-faq-answers {
+    max-height: 0;
+    overflow: hidden;
+    background: white;
+    padding: 0 15px;
+    transition: max-height 0.4s ease, padding 0,3s ease;
+}
+.arcane-faq-item input:checked ~ .arcane-faq-answers{
+    max-height: 200px;
+    padding: 15px;    
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--background-color);
+    color: var(--text-base-color);
+    font-family: var(--normal-font-1);
+}
+.footer-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 30px 40px;
+}
+.background-icons-style {
+    width: 32px;
+    height: 32px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(54, 54, 54);
+}
+.social-media-icons{
+    display: flex;
+    gap: 15px;
+} 
+.social-media-icons svg {
+    width: 14px;
+    height: 14px;
+}
+.footer-arcane-copy-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+span.footer-arcane-copy-container {
+    width: 70%;
+    text-align: center;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: rgb(127, 127, 127) ;  
+}
+.footer-nav-container {
+    display: flex;
+    gap: 20px;
+    font-family: var(--header-font);
+}
+.footer-nav-container a {
+    color: var(--text-base-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+@media (max-width: 700px ) { 
+    .footer-nav-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }    
+}
