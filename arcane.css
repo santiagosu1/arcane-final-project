@@ -85,13 +85,14 @@ nav ul li a {
     letter-spacing: 1px;
     font-size: 13.2px;
     font-weight: 400;
-    cursor: pointer;    
+    cursor: pointer;
+    text-decoration: none;
+    color: white;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.btn-sign-up a {
-    text-decoration: none;
-    color: white;
-}
 
 .mobile-menu-btn {
     display: none;
