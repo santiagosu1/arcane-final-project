@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: "Mark W05 Medium";
+    src: url("https://db.onlinewebfonts.com/t/b621d1ffb46493164fd62fb7a83ab0ff.woff2") format("woff2"),
+        url("https://db.onlinewebfonts.com/t/b621d1ffb46493164fd62fb7a83ab0ff.woff") format("woff"),
+        url("https://db.onlinewebfonts.com/t/b621d1ffb46493164fd62fb7a83ab0ff.ttf") format("truetype");
+    font-weight: normal;  
+}
+
+@font-face {
+    font-family: "Manuka";
+    src: url("./fonts/manuka-bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+:root {
+    --title-font-1: "Manuka", sans-serif;
+    --normal-font-1: "Inter", sans-serif;
+    --header-font: "Mark W05 Medium", "Overpass", sans-serif;
+    --background-color: rgb(10, 10, 10);
+    --text-base-color: rgb(255, 255, 255);
+    --bluelight-color: rgb(167, 182, 227);
+    --spotify-base-color: #006000;
+    --spotify-dark-color: #004e00;
+    --spotify-more-dark-color: #003000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: grid;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    grid-template-columns: 160px 5fr 1fr;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 25px;    
+    background-color: black;
+    min-height: 80px;
+}
+
+.header-container-style {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+}
+
+.logos-style {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    min-height: 80px;
+}
+
+.logos-style img {
+    height: 32px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 100%;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: var(--header-font);
+    color: white;
+    text-transform: uppercase;
+    font-size: 13.2px;
+    letter-spacing: 1px;
+    font-weight: 900;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 80px;
+}
+
+.spacer-decoration {
+    border-radius: 1px;
+    width: 50px;
+    margin: 0 auto;
+    display: block;
+}
+
+.sign-in-style {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 80px;
+    gap: 15px;
+}
+
+.btn-language {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-language img {
+    height: 20px;
+    width: auto;
+}
+
+.btn-sign-up {
+    width: 90px;
+    height: 30px;
+    background-color: #292929;
+    border-radius: 8px;
+    border: none;
+    font-family: var(--header-font);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13.2px;
+    font-weight: 400;
+    cursor: pointer;    
+}
+
+.btn-sign-up a {
+    text-decoration: none;
+    color: white;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background-color: #292929;
+    color: white;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    height: 48px;
+    width: 48px;
+}
+
+@media (min-width: 1024px) {
+    nav {   
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    header {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    nav {
+        margin-left: 18px;
+    }
+
+    ul li a {
+        display: none;
+        background-color: transparent;
+    }
+
+    .logos-style img {
+        height: 37px;
+    }
+
+    .btn-header {
+        display: none;
+    }
+
+    .btn-language img {
+        height: 30px;
+    }
+
+    .btn-sign-up {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+    }  
+}
+
+.arcane-404-bg {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    width: 100%;
+    height: 102%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.text-404-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+    min-height: 550px;
+    color: var(--text-base-color);
+}
+
+h1 {
+    font-family: var(--title-font-1);
+    font-size: 10rem;
+}
+
+.info-404-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h2,
+p {
+    font-family: var(--normal-font-1);
+}
+.btn-404-style {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    border-radius: 22px;
+    background-color: #d1363a;
+    margin-top: 40px;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+}
+.btn-404-style a {
+    position: relative;
+    z-index: 2;
+    text-decoration: none;
+    color: var(--text-base-color);
+    font-family: var(--normal-font-1);
+    font-size: 0.9rem;
+}
+.btn-404-style::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent 20%,
+        rgba(255, 255, 255, 0.35),
+        transparent 80%
+    );
+    transform: translateX(-120%);
+    z-index: 1;
+}
+.btn-404-style:hover {
+    animation: btn-float 0.4s ease forwards;
+}
+
+.btn-404-style:hover::before {
+    animation: sweep-light 0.7s ease forwards;
+}
+
+.btn-404-style:active {
+    animation: btn-press 0.2s ease forwards;
+}
+
+@keyframes btn-float {
+    from {
+        transform: translateY(0) scale(1);
+        box-shadow: none;
+        background-color: #d1363a;
+    }
+    to {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 14px 30px rgba(209, 54, 58, 0.45);
+        background-color: #e0464b;
+    }
+}
+
+@keyframes sweep-light {
+    0% {
+        transform: translateX(-120%);
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+}
+
+@keyframes btn-press {
+    from {
+        transform: translateY(-4px) scale(1.03);
+    }
+    to {
+        transform: translateY(-1px) scale(0.97);
+    }
+}

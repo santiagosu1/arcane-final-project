@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @font-face {
     font-family: "Mark W05 Medium";
@@ -536,11 +535,11 @@ h1 {
     font-family: var(--title-font-1);
 }
 .arcane-section-2-h2-style-1{
-    font-size: 46px;
+    font-size: 2.875rem;
 }
 .arcane-section-2-h2-style-2{
-    font-size: 132px;
-    line-height: 100px;
+    font-size: 8.25rem;
+    line-height: 0.8;
 } 
 /* SECTION 2 MEDIA QUERYS */
 
@@ -592,7 +591,6 @@ h1 {
     background-color: var(--background-color) ;
     color: var(--text-base-color);
     padding: 30px 40px;
-    max-width: auto;
 }
 .gallery-section-3-container h3 {
     font-family: var(--title-font-1);
@@ -898,10 +896,10 @@ h1 {
     font-size: 18px;
     line-height: 27px;
 }
-.music-descript-container h5 {
+.h5-first-title-style, .h5-second-title-style {
     font-family: var(--title-font-1);
+    text-transform: uppercase;
 }
-
 .h5-first-title-style {
     font-size: 46px;
     line-height: 30px
@@ -971,6 +969,7 @@ h1 {
 .explicit-song-style span{
     font-size: 8px;
 }
+/* SECTION 4 MEDIA QUERYS */
 @media (max-width: 1024px ) {
     .spotify-content-container {
         display: flex;
@@ -1070,7 +1069,163 @@ h1 {
     .h5-second-title-style {
         line-height: 70px;
     }
-    .arcane-music-icons-style {
-        
+}
+
+/* SECTION 4 */
+.arcane-form-container {
+    background-color: var(--background-color);
+    color: var(--text-base-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 30px 40px;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    gap: 20px;
+}
+.form-container label {
+    font-family: var(--normal-font-1);
+    font-weight: 700;
+    
+}
+.arcane-form-container h5 {
+    font-family: var(--title-font-1);
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+.form-inputs-top {
+    display: flex;
+    gap: 30px;
+}
+.inputs-top-style {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.arcane-input-style {
+    min-height: 45px;
+    min-width: 300px;
+    padding-left: 10px;
+    font-family: var(--normal-font-1);
+}
+.arcane-message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+.textareaMessage {
+   min-width: 53%;
+   min-height: 170px;
+   padding-left: 10px;
+   padding-top: 10px;
+   font-family: var(--normal-font-1); 
+}
+.arcane-submit-btn {
+    width: 100px;
+    height: 60px;
+    text-transform: uppercase;
+    font-size: 45px;
+    font-family: var(--title-font-1);
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(0deg, rgba(99, 116, 165, 0) 0%, rgba(10, 10, 10, 0.4) 100%), rgb(75, 96, 158);
+    border: none;
+    color: var(--text-base-color);
+    cursor: pointer;
+}
+.arcane-submit-btn:hover {
+    border-color: rgb(61, 82, 143);
+    background: linear-gradient(0deg, rgba(99, 116, 165, 0) 0%, rgba(10, 10, 10, 0.4) 100%), rgb(99, 116, 165);
+    transition: background-color 0.4s ease-in-out;
+}
+.send-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 53%;
+}
+
+/* MEDIA QUERYS SECTION 5 */
+@media (max-width: 1024px ) {
+    .arcane-form-container {
+        padding: 30px 10px;
     }
+    .form-inputs-top {
+        display: flex;
+        flex-direction: column;
+    }
+    .textareaMessage {
+        min-width: 100%;
+    }
+    .send-btn-container {
+        min-width: 100%;
+    }
+    .arcane-form-container h5 {
+        font-size: 2.8rem;
+    }
+}
+
+footer {
+    background-color: var(--background-color);
+    color: var(--text-base-color);
+    font-family: var(--normal-font-1);
+}
+.footer-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 30px 40px;
+}
+.background-icons-style {
+    width: 32px;
+    height: 32px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(54, 54, 54);
+}
+.social-media-icons{
+    display: flex;
+    gap: 15px;
+} 
+.social-media-icons svg {
+    width: 14px;
+    height: 14px;
+}
+.footer-arcane-copy-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+span.footer-arcane-copy-container {
+    width: 70%;
+    text-align: center;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: rgb(127, 127, 127) ;  
+}
+.footer-nav-container {
+    display: flex;
+    gap: 20px;
+    font-family: var(--header-font);
+}
+.footer-nav-container a {
+    color: var(--text-base-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
