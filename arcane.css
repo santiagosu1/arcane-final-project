@@ -1173,7 +1173,65 @@ h1 {
         font-size: 2.8rem;
     }
 }
+/* FAQ */
 
+.arcane-faq {
+    padding: 20px;    
+}
+.arcane-faq {
+    background: linear-gradient(0deg, rgba(99, 116, 165, 0) 0%, rgba(10, 10, 10, 0.4) 100%), rgb(99, 116, 165);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 50px;
+    color: var(--bluelight-color);
+}
+.arcane-faq h2{
+    font-family: var(--title-font-1);
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: var(--text-base-color);
+}
+.arcane-faq-item {
+    font-family: var(--normal-font-1);
+    font-weight: 300;
+    margin-bottom: 15px;
+    overflow: 0 4px 10px #000000;
+}
+.arcane-faq-item label {
+    font-weight: 300;
+}
+.arcane-faq-item input {
+    display: none; 
+       
+}
+.faq-question {
+    display: block;
+    background: var(--bluelight-color);
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    border-radius: 12px;
+}
+.faq-question:hover { 
+    background: var(--bluelight-color);
+}
+.arcane-faq-answers {
+    max-height: 0;
+    overflow: hidden;
+    background: white;
+    padding: 0 15px;
+    transition: max-height 0.4s ease, padding 0,3s ease;
+}
+.arcane-faq-item input:checked ~ .arcane-faq-answers{
+    max-height: 200px;
+    padding: 15px;    
+}
+
+/* FOOTER */
 footer {
     background-color: var(--background-color);
     color: var(--text-base-color);
