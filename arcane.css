@@ -977,11 +977,11 @@ h1 {
         padding: 0px;
     }
     .music-descript-container {
-        order: -1; /* esto la pone antes del reproductor */
+        order: -1;
     }
 
     .spotify-music-player-container {
-        order: 1; /* opcional, por claridad */
+        order: 1;
     }
     .h5-first-title-style { 
         font-size: 36px;
